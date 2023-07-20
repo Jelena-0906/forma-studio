@@ -1,0 +1,56 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .slajder {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .slike {
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .slike img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .strelice {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .strelica-levo,
+  .strelica-desno {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    /* Mobilni uređaji */
+    .slike {
+      flex-wrap: wrap;
+    }
+  
+    .slike img {
+      width: calc(50% - 10px); /* 2 reda po 2 slike */
+      margin: 5px;
+    }
+  
+    .strelice {
+      display: none;
+    }
+  }
+  
