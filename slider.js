@@ -29,4 +29,21 @@
   }
 
   prevButton.addEventListener('click', prevSlide);
-   nextButton.addEventListener('click', nextSlide);
+  nextButton.addEventListener('click', nextSlide);
+
+  var touchStartX = 0;
+  slider.addEventListener("touchstart", function(event) {
+    touchStartX = event.touches[0].clientX;
+  });
+
+  slider.addEventListener("touchend", function(event) {
+    var touchEndX = event.changedTouches[0].clientX;
+    var swipeDistance = touchEndX - touchStartX;
+
+  // Provera da li je swipe desno (prikaz prethodnog videa) ili levo (prikaz sledećeg videa)
+    if (swipeDistance > 50) {
+      prevSlide();
+    } else if (swipeDistance < -50) {
+      nextSlide();
+    }
+  });

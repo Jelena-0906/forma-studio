@@ -67,7 +67,7 @@ nav li a.active{
 @media screen and (max-width: 959px) {
   nav ul {
     display: none;
-    position: absolute;
+    position: fixed;
     width: 100%;
     background-color: black;
     color: white;
